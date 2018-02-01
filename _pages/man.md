@@ -8,3 +8,5 @@ layout: single
 
 Man
 =================
+
+This is a manual for `aslak.se`
