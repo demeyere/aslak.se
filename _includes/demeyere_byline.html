@@ -1,18 +1,10 @@
 <p class="byline">
-<a class="btn btn-primary btn-xs" href="{{ page.url }}</a> 
+<a class="btn btn-primary btn-xs" href="{{ post.url }}"></a> 
 
 <!-- 
-<?php 
-$my_category_base = "category";
-if (! "" == get_option('category_base')) {
-  $my_category_base = get_option('category_base');
-  }
-
-$my_tag_base = "tag";
-if (! "" == get_option('tag_base')) {
-  $my_tag_base = get_option('tag_base');
-  }
- ?>
+{{ post.categories }}
+{{ post.tags }}
+{{ post.id }}
 
 <span class="category">
 <?php 
@@ -37,6 +29,6 @@ if ($posttags) {
 </span> 
 -->
 
-<time class="text-muted">{{ page.date }}</time>
+<time class="text-muted">{{ post.date }}</time>
 
 <!-- /.byline --></p>
