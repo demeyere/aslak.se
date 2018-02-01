@@ -1,0 +1,42 @@
+<p class="byline">
+<a class="btn btn-primary btn-xs" href="{{ page.url }}</a> 
+
+<!-- 
+<?php 
+$my_category_base = "category";
+if (! "" == get_option('category_base')) {
+  $my_category_base = get_option('category_base');
+  }
+
+$my_tag_base = "tag";
+if (! "" == get_option('tag_base')) {
+  $my_tag_base = get_option('tag_base');
+  }
+ ?>
+
+<span class="category">
+<?php 
+$categories = get_the_terms( 0, 'category' );
+if ($categories) {
+  foreach($categories as $category) {
+    echo "<a class='btn btn-primary btn-xs btn-warning' href='/".$my_category_base."/".$category->slug."'>".$category->name."</a>\n"; 
+  }
+}
+?>
+</span>
+
+<span class="tags">
+<?php 
+$posttags = get_the_tags();
+if ($posttags) {
+  foreach($posttags as $tag) {
+    echo "<a class='btn btn-primary btn-xs btn-info' href='/".$my_tag_base."/".$tag->slug."'/>".$tag->name."</a>\n"; 
+    }
+  }
+ ?>
+</span> 
+-->
+
+<time class="text-muted">{{ page.date }}</time>
+
+<!-- /.byline --></p>
