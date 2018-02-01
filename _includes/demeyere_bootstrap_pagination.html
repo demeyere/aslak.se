@@ -1,23 +1,14 @@
-{% assign my_pages = 25 %}<!-- my_pages = {{ my_pages }} -->
-{% assign my_page = 17 %}<!-- my_page = {{ my_page }} -->
-
 {% assign my_pages = paginator.total_pages %}
 {% assign my_page = paginator.page %}
-
-
-{% if my_pages > 1 %}{% assign show_pagination = true %}{%else%}{% assign show_pagination = false %}{% endif %}<!-- show_pagination = {{ show_pagination }} -->
-{% if my_pages < 10 %}{% assign i_am_small = true %}{%else%}{% assign i_am_small = false %}{% endif %}<!-- i_am_small = {{ i_am_small }} -->
-{% if my_pages > 9 %}{% assign i_am_big = true %}{%else%}{% assign i_am_big = false %}{% endif %}<!-- i_am_big = {{ i_am_big }} -->
-{% if my_page < 6 %}{% assign assign i_am_early = true %}{%else%}{% assign i_am_early = false %}{% endif %}<!-- i_am_early = {{ i_am_early }} -->
-{% assign my_page_spot_from_end = my_pages | minus: my_page %}<!-- my_page_spot_from_end = {{ my_page_spot_from_end }} -->
-
-{% assign calc = numColumns | minus: 1 %}
+{% if my_pages > 1 %}{% assign show_pagination = true %}{%else%}{% assign show_pagination = false %}{% endif %}
+{% if my_pages < 10 %}{% assign i_am_small = true %}{%else%}{% assign i_am_small = false %}{% endif %}
+{% if my_pages > 9 %}{% assign i_am_big = true %}{%else%}{% assign i_am_big = false %}{% endif %}
+{% if my_page < 6 %}{% assign assign i_am_early = true %}{%else%}{% assign i_am_early = false %}{% endif %}
+{% assign my_page_spot_from_end = my_pages | minus: my_page %}
 {% if my_page_spot_from_end < 6 %}{% assign i_am_late = true %}{%else%}{% assign i_am_late = false %}{% endif %}
 {% if i_am_late and i_am_early %}{% assign i_am_late = false %}{% endif %}
-<!-- i_am_late = {{ i_am_late }} -->
 {% assign i_am_in_the_middle = true %}
 {% if i_am_late or i_am_early %}{% assign i_am_in_the_middle = false %}{% endif %}
-<!-- i_am_in_the_middle = {{ i_am_in_the_middle }} -->
 
 {% if show_pagination %}
 
