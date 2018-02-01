@@ -11,6 +11,9 @@ layout: single
 <p>
 
 {% assign sorted = (site.posts | sort: 'title') | reverse %}
+
+{{ sorted }}
+
 {% for item in sorted %}
 {{ item.title }} -- {{ item.url }}<br/>
 {% endfor %}
