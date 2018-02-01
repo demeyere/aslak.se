@@ -1,26 +1,26 @@
 {% assign my_pages = paginator.total_pages %}
 {% assign my_page = paginator.page %}
 
-{% if my_pages > 1 %}{% assign show_page = true %}{% endif %}
-<!-- show_page = {{ show_page }} -->
-{% if my_pages < 10 %}{% assign i_am_small = true %}{% endif %}
-<!-- i_am_small = {{ i_am_small }} -->
-{% if my_pages > 9 %}{% assign i_am_big = true %}{% endif %}
-<!-- i_am_big = {{ i_am_big }} -->
-{% if my_page < 6 %}{% assign assign i_am_early = true %}{% endif %}
-<!-- i_am_early = {{ i_am_early }} -->
-{% assign my_page_spot_from_end = my_pages - my_page %}
-<!-- my_page_spot_from_end = {{ my_page_spot_from_end }} -->
-{% if my_page_spot_from_end < 6 %}{% assign i_am_late = true %}{% endif %}
+{% assign my_pages = 5 %}
+{% assign my_page = 3 %}
+
+
+{% if my_pages > 1 %}{% assign show_pagination = true %}{%else%}{% assign show_pagination = false %}{% endif %}<!-- show_pagination = {{ show_page }} -->
+{% if my_pages < 10 %}{% assign i_am_small = true %}{%else%}{% assign i_am_small = false %}{% endif %}<!-- i_am_small = {{ i_am_small }} -->
+{% if my_pages > 9 %}{% assign i_am_big = true %}{%else%}{% assign i_am_big = false %}{% endif %}<!-- i_am_big = {{ i_am_big }} -->
+{% if my_page < 6 %}{% assign assign i_am_early = true %}{%else%}{% assign i_am_early = false %}{% endif %}<!-- i_am_early = {{ i_am_early }} -->
+{% assign my_page_spot_from_end = my_pages - my_page %}<!-- my_page_spot_from_end = {{ my_page_spot_from_end }} -->
+{% if my_page_spot_from_end < 6 %}{% assign i_am_late = true %}{%else%}{% assign i_am_late = false %}{% endif %}
 {% if i_am_late and i_am_early %}{% assign i_am_late = false %}{% endif %}
 <!-- i_am_late = {{ i_am_late }} -->
 {% assign i_am_in_the_middle = true %}
 {% if i_am_late or i_am_early %}{% assign i_am_in_the_middle = false %}{% endif %}
 <!-- i_am_in_the_middle = {{ i_am_in_the_middle }} -->
 
-{% if show_page %}
-<ul class='pagination'>
-<!-- i_am_small -->
+{% if show_pagination %}
+
+{% if i_am_small %}
+<ul class='pagination small'>
 {% for i in (1..paginator.total_pages) %}
   {% if i == paginator.page %}
     {% if i == 1 %}<li class="active"><a href='/'>{{ i }}</a></li>
@@ -33,6 +33,9 @@
   {% endif %}
 {% endfor %}
 <!-- /.pagination --></ul>
+{% endif %}
+
+
 {% endif %}
 
 <!--
