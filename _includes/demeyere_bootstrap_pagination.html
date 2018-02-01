@@ -55,10 +55,11 @@
 {% endif %}
 
 {% if i_am_big and i_am_late %}
-{% assign my_previous = my_page - 8 %}
+{% assign my_previous = my_page | minus: 8 %}
+{% assign my_start_range = my_page | minus: 7 %}
 <ul class='pagination small'>
 <li><a href='/page{{ my_previous }}'>&laquo;</a></li>
-{% for i in (my_page-7..my_pages) %}
+{% for i in (my_start_range..my_pages) %}
   {% if i == my_page %}
     {% if i == 1 %}<li class="active"><a href='/'>{{ i }}</a></li>
     {% else %}<li class="active"><a href='/page{{ i }}'>{{ i }}</a></li>
