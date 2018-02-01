@@ -1,11 +1,11 @@
 {% assign my_pages = paginator.total_pages %}
 {% assign my_page = paginator.page %}
 
-{% assign my_pages = 5 %}
+{% assign my_pages = 15 %}
 {% assign my_page = 3 %}
 
 
-{% if my_pages > 1 %}{% assign show_pagination = true %}{%else%}{% assign show_pagination = false %}{% endif %}<!-- show_pagination = {{ show_page }} -->
+{% if my_pages > 1 %}{% assign show_pagination = true %}{%else%}{% assign show_pagination = false %}{% endif %}<!-- show_pagination = {{ show_pagination }} -->
 {% if my_pages < 10 %}{% assign i_am_small = true %}{%else%}{% assign i_am_small = false %}{% endif %}<!-- i_am_small = {{ i_am_small }} -->
 {% if my_pages > 9 %}{% assign i_am_big = true %}{%else%}{% assign i_am_big = false %}{% endif %}<!-- i_am_big = {{ i_am_big }} -->
 {% if my_page < 6 %}{% assign assign i_am_early = true %}{%else%}{% assign i_am_early = false %}{% endif %}<!-- i_am_early = {{ i_am_early }} -->
