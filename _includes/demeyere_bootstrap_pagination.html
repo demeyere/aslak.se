@@ -1,7 +1,8 @@
 
 <ul class='pagination'>
+<!-- pagination.total_pages = {{ pagination.total_pages }} -->
 
-{% for my_page in pagination.total_pages %}
+{% for i in 1..pagination.total_pages %}
 <li><a href='/page{{ my_page }}'>{{ my_page }}</a></li>
 {% endfor %}
 
