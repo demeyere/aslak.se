@@ -2,7 +2,7 @@
 {% assign my_page = paginator.page %}
 
 {% assign my_pages = 25 %}<!-- my_pages = {{ my_pages }} -->
-{% assign my_page = 23 %}<!-- my_page = {{ my_page }} -->
+{% assign my_page = 17 %}<!-- my_page = {{ my_page }} -->
 
 
 {% if my_pages > 1 %}{% assign show_pagination = true %}{%else%}{% assign show_pagination = false %}{% endif %}<!-- show_pagination = {{ show_pagination }} -->
@@ -73,20 +73,32 @@
 <!-- /.pagination --></ul>
 {% endif %}
 
+{% if i_am_big and i_am_in_the_middle %}
+{% assign my_previous = my_pages | minus: 4 %}
+{% assign my_next = my_pages | plus: 4 %}
+{% assign my_start_range = my_pages | minus: 3 %}
+{% assign my_end_range = my_pages | plus: 3 %}
+<ul class='pagination small'>
+<li><a href='/page{{ my_previous }}'>&laquo;</a></li>
+{% for i in (my_start_range..my_pages) %}
+  {% if i == my_page %}
+    {% if i == 1 %}<li class="active"><a href='/'>{{ i }}</a></li>
+    {% else %}<li class="active"><a href='/page{{ i }}'>{{ i }}</a></li>
+    {% endif %}
+  {% else %}
+    {% if i == 1 %}<li><a href='/'>{{ i }}</a></li>
+    {% else %}<li><a href='/page{{ i }}'>{{ i }}</a></li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+<li><a href='/page{{ my_next }}'>&raquo;</a></li>
+<!-- /.pagination --></ul>
+{% endif %}
+
 
 {% endif %}
 
 <!--
-
-// i_am_big and i_am_late
-if ($number_of_pages > 9 and $my_current_page > 5 and ($number_of_pages - $my_current_page) <= 4 ) { // 20,40
-  echo "  <li><a href='".$my_base_url."page/". ($number_of_pages - 8) ."'>&laquo;</a></li>"."\n";
-  for ($i = $number_of_pages-7; $i <= $number_of_pages; $i++) {
-    if ($i==$my_current_page) {
-      echo "  <li class='active'><span>".$i."</span></li>"."\n";
-    } else {
-      echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($i)."'>".$i."</a></li>"."\n";
-
 
 // i_am_big and i_am_in_the_middle
 if ($number_of_pages > 9 and $my_current_page > 5 and ($number_of_pages - $my_current_page) > 4 ) {
