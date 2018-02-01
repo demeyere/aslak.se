@@ -10,8 +10,8 @@ layout: single
 
 <p>
 
-{% assign sorted = (site.posts | sort: 'alphabetical') | reverse %}
+{% assign sorted = (site.posts | sort: 'title') | reverse %}
 {% for item in sorted %}
-{{ item.url }}<br/>
+{{ item.title }} -- {{ item.url }}<br/>
 {% endfor %}
 
