@@ -1,0 +1,72 @@
+
+<ul class='pagination'>
+
+{% for my_page in pagination.total_pages %}
+<li><a href='/page{{ my_page }}'>{{ my_page }}</a></li>
+{% endfor %}
+
+<!-- /.pagination --></ul>
+
+
+
+<!--
+
+if ($number_of_pages >1 ){
+  echo "\n"."<ul class='pagination'>"."\n";
+}
+
+
+if ($number_of_pages > 1 and $number_of_pages < 10 ) { // 5,7
+  for ($i = 1; $i <= $number_of_pages; $i++) {
+    if ($i==$my_current_page) {
+      echo "  <li class='active'><span>".$i."</span></li>"."\n";
+    } else {
+      echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($i)."'>".$i."</a></li>"."\n";
+    };
+  };
+};
+
+
+if ($number_of_pages > 9 and $my_current_page <= 5 ) { // 5,10
+  for ($i = 1; $i <= 8; $i++) {
+    if ($i==$my_current_page) {
+      echo "  <li class='active'><span>".$i."</span></li>"."\n";
+    } else {
+      echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($i)."'>".$i."</a></li>"."\n";
+    };
+  };
+  echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link(9)."'>&raquo;</a></li>"."\n";
+};
+
+
+if ($number_of_pages > 9 and $my_current_page > 5 and ($number_of_pages - $my_current_page) > 4 ) { // 6,10
+  echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($my_current_page - 4) ."'>&laquo;</a></li>"."\n";
+  for ($i = $my_current_page-3; $i <= $my_current_page+3; $i++) {
+    if ($i==$my_current_page) {
+      echo "  <li class='active'><span>".$i."</span></li>"."\n";
+    } else {
+      echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($i)."'>".$i."</a></li>"."\n";
+    };
+  };
+  echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($my_current_page + 4) ."'>&raquo;</a></li>"."\n";
+};
+
+
+if ($number_of_pages > 9 and $my_current_page > 5 and ($number_of_pages - $my_current_page) <= 4 ) { // 20,40
+  echo "  <li><a href='".$my_base_url."page/". ($number_of_pages - 8) ."'>&laquo;</a></li>"."\n";
+  for ($i = $number_of_pages-7; $i <= $number_of_pages; $i++) {
+    if ($i==$my_current_page) {
+      echo "  <li class='active'><span>".$i."</span></li>"."\n";
+    } else {
+      echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($i)."'>".$i."</a></li>"."\n";
+    };
+  };
+};
+
+
+if ($number_of_pages >1 ){
+echo "<!-- /.pagination --></ul>"."\n";
+}
+
+
+ -->
