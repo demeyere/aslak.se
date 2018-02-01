@@ -5,19 +5,24 @@
 
 <div class="col-md-12">
 
-
 {% for post in paginator.posts %}
 
 <article class="{{ post.class }}" >
 {{ post.content }}
-
 {% include demeyere_byline.html %}
-
 </article>
-
 {% endfor %}
 
 {{ content }}
+
+<nav>
+{%if paginator.previous_page %}
+<a href="{{ paginator.previous_page_path}}">previous</a>
+{% endif %} | 
+{%if paginator.next_page %}
+<a href="{{ paginator.next_page_path}}">previous</a>
+{% endif %}
+</nav>
 
 <!-- include demeyere_bootstrap_pagination.html -->
 
