@@ -1,4 +1,4 @@
 name: Aslak Arþursson
 markdown: kramdown
 permalink: /:year/:title
-paginate: 1
+paginate: 13
