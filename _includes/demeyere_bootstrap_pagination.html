@@ -1,21 +1,26 @@
+{% assign my_pages = paginator.total_pages %}
+{% assign my_page = paginator.page %}
 
-{% if paginator.total_pages > 1 %}{% assign show_page = true %}{% endif %}
+{% if my_pages > 1 %}{% assign show_page = true %}{% endif %}
 <!-- show_page = {{ show_page }} -->
-{% if paginator.total_pages < 10 %}{% assign i_am_small = true %}{% endif %}
+{% if my_pages < 10 %}{% assign i_am_small = true %}{% endif %}
 <!-- i_am_small = {{ i_am_small }} -->
-{% if paginator.total_pages > 9 %}{% assign i_am_big = true %}{% endif %}
+{% if my_pages > 9 %}{% assign i_am_big = true %}{% endif %}
 <!-- i_am_big = {{ i_am_big }} -->
-{% if paginator.page < 6 %}{% assign assign i_am_early = true %}{% endif %}
+{% if my_page < 6 %}{% assign assign i_am_early = true %}{% endif %}
 <!-- i_am_early = {{ i_am_early }} -->
-{% assign my_page_spot_from_end = paginator.total_pages - paginator.page %}
+{% assign my_page_spot_from_end = my_pages - my_page %}
 <!-- my_page_spot_from_end = {{ my_page_spot_from_end }} -->
 {% if my_page_spot_from_end < 6 %}{% assign i_am_late = true %}{% endif %}
+{% if i_am_late and i_am_early %}{% assign i_am_late = false %}{% endif %}
 <!-- i_am_late = {{ i_am_late }} -->
-
+{% assign i_am_in_the_middle = true %}
+{% if i_am_late or i_am_early %}{% assign i_am_in_the_middle = false %}{% endif %}
+<!-- i_am_in_the_middle = {{ i_am_in_the_middle }} -->
 
 {% if show_page %}
 <ul class='pagination'>
-<!-- paginator.total_pages = {{ paginator.total_pages }} -->
+<!-- i_am_small -->
 {% for i in (1..paginator.total_pages) %}
   {% if i == paginator.page %}
     {% if i == 1 %}<li class="active"><a href='/'>{{ i }}</a></li>
@@ -32,16 +37,7 @@
 
 <!--
 
-if ($number_of_pages > 1 and $number_of_pages < 10 )
-  for ($i = 1; $i <= $number_of_pages; $i++) {
-    if ($i==$my_current_page) {
-      echo "  <li class='active'><span>".$i."</span></li>"."\n";
-    } else {
-      echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($i)."'>".$i."</a></li>"."\n";
-    };
-  };
-};
-
+// i_am_big and i_am_early
 if ($number_of_pages > 9 and $my_current_page <= 5 ) {
   for ($i = 1; $i <= 8; $i++) {
     if ($i==$my_current_page) {
@@ -53,6 +49,7 @@ if ($number_of_pages > 9 and $my_current_page <= 5 ) {
   echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link(9)."'>&raquo;</a></li>"."\n";
 };
 
+// i_am_big and i_am_in_the_middle
 if ($number_of_pages > 9 and $my_current_page > 5 and ($number_of_pages - $my_current_page) > 4 ) {
   echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($my_current_page - 4) ."'>&laquo;</a></li>"."\n";
   for ($i = $my_current_page-3; $i <= $my_current_page+3; $i++) {
@@ -65,7 +62,7 @@ if ($number_of_pages > 9 and $my_current_page > 5 and ($number_of_pages - $my_cu
   echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($my_current_page + 4) ."'>&raquo;</a></li>"."\n";
 };
 
-
+// i_am_big and i_am_late
 if ($number_of_pages > 9 and $my_current_page > 5 and ($number_of_pages - $my_current_page) <= 4 ) { // 20,40
   echo "  <li><a href='".$my_base_url."page/". ($number_of_pages - 8) ."'>&laquo;</a></li>"."\n";
   for ($i = $number_of_pages-7; $i <= $number_of_pages; $i++) {
@@ -73,6 +70,5 @@ if ($number_of_pages > 9 and $my_current_page > 5 and ($number_of_pages - $my_cu
       echo "  <li class='active'><span>".$i."</span></li>"."\n";
     } else {
       echo "  <li><a href='".demeyere_bootstrap_pagination_pagenum_link($i)."'>".$i."</a></li>"."\n";
-    
 
 --> 
