@@ -21,8 +21,8 @@
 
 {% if i_am_small %}
 <ul class='pagination small'>
-{% for i in (1..paginator.total_pages) %}
-  {% if i == paginator.page %}
+{% for i in (1..my_pages) %}
+  {% if i == my_page %}
     {% if i == 1 %}<li class="active"><a href='/'>{{ i }}</a></li>
     {% else %}<li class="active"><a href='/page{{ i }}'>{{ i }}</a></li>
     {% endif %}
@@ -32,6 +32,23 @@
     {% endif %}
   {% endif %}
 {% endfor %}
+<!-- /.pagination --></ul>
+{% endif %}
+
+{% if i_am_big and i_am_early %}
+<ul class='pagination small'>
+{% for i in (1..8) %}
+  {% if i == my_page %}
+    {% if i == 1 %}<li class="active"><a href='/'>{{ i }}</a></li>
+    {% else %}<li class="active"><a href='/page{{ i }}'>{{ i }}</a></li>
+    {% endif %}
+  {% else %}
+    {% if i == 1 %}<li><a href='/'>{{ i }}</a></li>
+    {% else %}<li><a href='/page{{ i }}'>{{ i }}</a></li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+<li><a href='/page9'>&raquo;</a></li>
 <!-- /.pagination --></ul>
 {% endif %}
 
