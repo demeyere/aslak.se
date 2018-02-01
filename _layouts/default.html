@@ -6,7 +6,7 @@
 <div class="col-md-12">
 
 
-{% for post in site.posts %}
+{% for post in paginator.posts %}
 
 <article class="{{ post.class }}" >
 {{ post.content }}
@@ -17,6 +17,7 @@
 
 {% endfor %}
 
+{{ content }}
 
 <!-- include demeyere_bootstrap_pagination.html -->
 
