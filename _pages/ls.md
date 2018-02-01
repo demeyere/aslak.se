@@ -9,7 +9,9 @@ layout: single
 `% aslak.se:ls`
 
 <p>
-{% for post in site.posts %}
-{{ post.url }}<br/>
+
+{% assign sorted = (site.posts | sort: 'alphabetical') | reverse %}
+{% for item in sorted %}
+{{ item.url }}<br/>
 {% endfor %}
 
