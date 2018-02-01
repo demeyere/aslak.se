@@ -146,7 +146,7 @@ footer.aslak p.kategorier-list {
 /* add space and a rule between articles */
 article {
   padding-bottom:31px;
-  border-bottom:1px solid #ddddcc;
+  border-bottom:3px solid black;
   margin-bottom:31px;
   }
 
@@ -282,10 +282,9 @@ ol li { list-style-type:decimal; }
 /* quotes ================================================================== */
 
 /* articles that are formatted as quotes should not display the headline or the byline */
-article.format-quote h2 {display:none;}
-article.format-quote p.byline {display:none;}
-article.format-quote p >img {padding-left:12px;}
-article.format-quote p {
+article.quote h2 {display:none;}
+article.quote p >img {padding-left:12px;}
+article.quote p {
   font-family: "ff-more-web-pro",serif;
   font-style: italic;
   font-weight: 400;
@@ -341,39 +340,6 @@ div.page-break { display:none; }
 blockquote.note       { border-color:#77aa77; background-color:#ddffdd; }
 blockquote.warning    { border-color:#ff3333; background-color:#ffcccc; }
 blockquote.deprecated { border-color:#dddd66; background-color:#ffffcc; }
-
-
-/* gravity forms overrides ================================================= */
-.gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium {
-  width: 98% !important;
-  }
-
-article .gform_wrapper div.validation_error {  /* make this look like class="alert alert-warning" */
-  font-size: inherit;
-  font-weight:bold;
-  color: #790000; 
-  background-color:#ffdfe0;
-  border-color: #c89797;
-  border-radius:4px;
-  padding:15px;
-  margin-bottom:20px;
-  }
-  
-
-/* `ls` overrides ========================================================== */
-
-.postname-ls article {
-  margin:0; padding:0;
-  }
-.postname-ls time {
-  display:none
-  }
-.postname-ls article p.byline {
-  overflow:hidden;
-  height:25px; 
-  line-height:25px;
-  margin:0; padding:0;
-  }
 
 
 /* social media section ==================================================== */
