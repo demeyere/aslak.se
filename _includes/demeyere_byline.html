@@ -1,21 +1,16 @@
 <p class="byline">
 <a class="btn btn-primary btn-xs" href="{{ post.url }}"></a> 
 
+{% for category in post.categories %}
+<span class="category">
+<a class='btn btn-primary btn-xs btn-warning' href=''>{{ category }}</a> 
+</span>
+{% endfor %}
+
 <!-- 
 {{ post.categories }}
 {{ post.tags }}
 {{ post.id }}
-
-<span class="category">
-<?php 
-$categories = get_the_terms( 0, 'category' );
-if ($categories) {
-  foreach($categories as $category) {
-    echo "<a class='btn btn-primary btn-xs btn-warning' href='/".$my_category_base."/".$category->slug."'>".$category->name."</a>\n"; 
-  }
-}
-?>
-</span>
 
 <span class="tags">
 <?php 
