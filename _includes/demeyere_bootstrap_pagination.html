@@ -1,8 +1,8 @@
-{% assign my_pages = paginator.total_pages %}
-{% assign my_page = paginator.page %}
-
 {% assign my_pages = 25 %}<!-- my_pages = {{ my_pages }} -->
 {% assign my_page = 17 %}<!-- my_page = {{ my_page }} -->
+
+{% assign my_pages = paginator.total_pages %}
+{% assign my_page = paginator.page %}
 
 
 {% if my_pages > 1 %}{% assign show_pagination = true %}{%else%}{% assign show_pagination = false %}{% endif %}<!-- show_pagination = {{ show_pagination }} -->
