@@ -1,0 +1,6 @@
+/* change the logo on the admin page */
+
+#login h1 a {
+  background-image: url('http://demeyere.com/images/demeyere-logogroup-fbfbfb.png')!important;
+  margin-bottom: 17px;
+  }

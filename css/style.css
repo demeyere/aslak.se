@@ -1,0 +1,444 @@
+/*   
+Theme Name: aslak.se
+Theme URI: http://aslak.se/
+Description: aslak.se
+Author: Ross DeMeyere
+Author URI: http://demeyere.com/
+Version: 2015-10-30 15:03 
+*/
+
+
+/* reference items ========================================================= */
+
+.RBNo21a-Bold { font-family: RBNo21a-Bold; }
+.inconsolata  { font-family: "inconsolata"; }
+.ff-more      { font-family: "ff-more-web-pro",serif; }
+
+
+/* demeyere™ color palette ================================================= */
+
+.guldgul {
+  color:#fec920;
+  }
+.guldgul-bg {
+  background-color:#fec920;
+  }
+.mellanblaa {
+  color:#006da6;
+  }
+.mellanblaa-bg {
+  background-color:#006da6;
+  }
+
+.black       { color:#000000; }
+.black-bg    { background-color:#000000; }
+.white       { color:#ffffff; }
+.white a     { color:#ffffff; }
+.concrete    { color:#949d9e; }
+.highlighter { background-color:#ffffaa; }
+
+.black-bg,
+.guldgul-bg,
+.mellanblaa-bg
+  { color:#ffffff; }
+
+/* general style */
+
+img { max-width:100%; }
+iframe { max-width:100%; }
+
+body {
+  font-size:20px;
+  background-color:#ffffff;
+  }
+html {
+  background-color:#fec920;
+  }
+
+
+/* header section ========================================================== */
+
+header.demeyere {
+  background-color:#006da6;
+  }
+header.demeyere div.container {
+  padding-top: 13px;
+  padding-bottom: 3px;
+  }
+header.demeyere h1 {
+  color: #ffffff;
+  }
+header.demeyere nav {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  }
+
+header.demeyere a { color: #ffffff; }
+
+
+@media (min-width: 768px) { /* (sm) Small devices (tablets, 768px and up) */
+
+header.demeyere nav {
+  height: 53px;
+  line-height: 53px;
+  text-align: right;
+  padding-bottom: 0;
+  }
+
+} /* /@media sm */
+
+header.demeyere nav a, header.demeyere nav a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  }
+header.demeyere nav a:hover, header.demeyere nav a:active {
+  color: #ffffff;
+  text-decoration: underline;
+  }
+
+
+/* content-area section ==================================================== */
+
+section.content-area {
+  padding:20px 0; 
+  }
+
+
+/* footer section ========================================================== */
+
+footer.aslak {
+  background-color:#006da6;
+  }
+footer.aslak div.container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  }
+footer.aslak p {
+  color: #ffffff;
+ /* font-size: 12px; line-height: 14px; */
+  font-weight: bold;
+  }
+footer.aslak p.tagline {
+  font-family: "ff-more-web-pro",serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #ffffff;
+ /* font-size: 14px; line-height: 16px; */
+  font-style: italic;
+  }
+footer.aslak a, footer.aslak a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  }
+footer.aslak a:hover, footer.aslak a:active {
+  color: #ffffff;
+  text-decoration: underline;
+  }
+
+footer.aslak p.kategorier-list {
+  font-weight:normal;
+  }
+
+/* article specific ======================================================== */
+
+/* add space and a rule between articles */
+article {
+  padding-bottom:31px;
+  border-bottom:1px solid #ddddcc;
+  margin-bottom:31px;
+  }
+
+/* remove the rule between articles when there is only one article on the page */
+body.page article, 
+body.single article {
+  padding-bottom:0;
+  border-bottom:0;
+  }
+
+/* add it back on the journal page `is_single` but used as `ls` */
+body.postname-journal article {
+  padding-bottom:31px;
+  border-bottom:1px solid #ddddcc;
+  }
+
+h1 {
+  font-family: RBNo21a-Bold;
+  font-weight: normal;
+/*  font-size:36px; line-height:36px; */
+  color:#006da6;
+  margin-top:0px;
+  margin-bottom:18px;
+  }
+
+iframe + h1, 
+p + h1,
+img + h1,
+a + h1,
+blockquote + h1 {
+  margin-top:18px;
+  }
+
+h2 {
+  font-weight:bold;
+  color:#545454;
+/*  font-size:18px; line-height:18px; */
+  margin-top:18px; margin-bottom:18px;
+  }
+  
+h3 { 
+  margin-top:18px; margin-bottom:9px;
+  color:#777777;
+/*  font-size:14px; line-height:18px; */
+  font-weight:bold; font-style:italic;
+  }
+
+h4, h5, h6 { 
+/*  font-size:12px; line-height:18px; */
+  font-weight:bold;
+  color:#777777;
+  margin-bottom:9px; margin-top:18px;
+  }
+
+mark {
+  color:inherit;
+  background-color:#ffffaa; /* highlighter */
+  }
+
+blockquote {
+  color:#949d9e;
+  }
+
+p.byline {
+  line-height: 25px;
+  }
+
+p.byline .btn-primary {
+    background-color: #006da6;
+    border-color: #006da6;
+    color: #ffffff;
+}
+span.category .btn-primary {
+    background-color: #fec920;
+    border-color: #fec920;
+    color: #ffffff;
+}
+span.tags .btn-primary {
+    background-color: #949d9e;
+    border-color: #949d9e;
+    color: #ffffff;
+}
+
+
+/* article feature-imagery-block ============================================= */
+
+.feature-imagery-block         { margin:0 -4px 0 -2px; padding:0; }
+.feature-imagery-block    img  { float:left; padding:0 2px 4px; }
+.feature-imagery-block-1  img  { width:100%;                }
+.feature-imagery-block-2  img  { width: 50%;                }
+.feature-imagery-block-3  img  { width: 33.3333333333333%;  }
+.feature-imagery-block-4  img  { width: 25%;                }
+.feature-imagery-block-5  img  { width: 20%;                }
+.feature-imagery-block-6  img  { width: 16.6666666666666%;  }
+.feature-imagery-block-7  img  { width: 14.2857142857%;     }
+.feature-imagery-block-8  img  { width: 12.5%;              }
+.feature-imagery-block-9  img  { width: 11.1111111111111%;  }
+.feature-imagery-block-10 img  { width: 10%;                }
+.feature-imagery-block-11 img  { width:  9.09090909090909%; }
+.feature-imagery-block-12 img  { width:  8.33333333333333%; }
+.feature-imagery-block + h1    { margin-top:16px; }
+
+
+
+/* code and textarea specific ============================================== */
+
+code,tt,kbd,dfn,samp,textarea {
+  font-family: Consolas, 'inconsolata', "Lucida Console", Monaco, courier, monospace; 
+  font-style:normal; 
+  font-weight:normal;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  color: #333333;
+  }
+pre code {
+  border:0;
+  }
+textarea {
+  width:95%; height:250px;
+  font-size:12px;
+  border:1px solid #bbbbbb;
+  margin-bottom:10px;
+  }
+
+
+/*  lists  ================================================================= */
+
+ul li { list-style-type:square; }
+ol li { list-style-type:decimal; }
+
+
+/* quotes ================================================================== */
+
+/* articles that are formatted as quotes should not display the headline or the byline */
+article.format-quote h2 {display:none;}
+article.format-quote p.byline {display:none;}
+article.format-quote p >img {padding-left:12px;}
+article.format-quote p {
+  font-family: "ff-more-web-pro",serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size:150%;
+  color:#cccccc;
+  text-indent:-12px;
+  }
+
+
+/* videos ================================================================== */
+
+/* articles that are formatted as videos should not display the headline or the byline
+   and should only contain a single video with no descriptions */
+article.format-video h2 {display:none;}
+article.format-video p.byline {display:none;}
+
+/* videos ================================================================== */
+
+/* articles that are formatted as links should not display the headline or the byline
+   and should only contain a single link with no descriptions */
+article.format-link p.byline {display:none;}
+
+
+/* display lists =========================================================== */
+
+dd { margin-left:18px; }
+
+
+/* Adjacent `blockquote` or `pre` fix ====================================== */
+/* Use `- - -` after a `blockquote` or `pre` in the markdown to prevent it 
+   from merging with an adjacent `blockquote` or `pre`. */
+
+pre + hr,
+blockquote + hr {
+  display:none;
+  }
+
+
+/* Print style negation ==================================================== */
+
+div.page-break { display:none; }
+.print-only    { display:none; }
+
+
+/* emotional CSS =========================================================== */
+
+*.shout   { text-transform:uppercase; }
+*.whisper { text-transform:lowercase; color:#94909e; }
+
+
+/* blockquote styles FIXME ================================================= */
+
+blockquote.note       { border-color:#77aa77; background-color:#ddffdd; }
+blockquote.warning    { border-color:#ff3333; background-color:#ffcccc; }
+blockquote.deprecated { border-color:#dddd66; background-color:#ffffcc; }
+
+
+/* gravity forms overrides ================================================= */
+.gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium {
+  width: 98% !important;
+  }
+
+article .gform_wrapper div.validation_error {  /* make this look like class="alert alert-warning" */
+  font-size: inherit;
+  font-weight:bold;
+  color: #790000; 
+  background-color:#ffdfe0;
+  border-color: #c89797;
+  border-radius:4px;
+  padding:15px;
+  margin-bottom:20px;
+  }
+  
+
+/* `ls` overrides ========================================================== */
+
+.postname-ls article {
+  margin:0; padding:0;
+  }
+.postname-ls time {
+  display:none
+  }
+.postname-ls article p.byline {
+  overflow:hidden;
+  height:25px; 
+  line-height:25px;
+  margin:0; padding:0;
+  }
+
+
+/* social media section ==================================================== */
+
+section.socialmedia {
+  text-align:center;
+  padding:20px 0;
+  border-top:1px solid #eeeeee;
+  }
+a.social-font {
+  font-size:42px; 
+  color:#cccccc;
+  text-decoration:none;
+  margin:0 4px;
+  vertical-align:middle;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+  }
+a:hover.social-font {
+  color:#8cb624;
+  }
+
+
+/* glyphicons ============================================================== */
+
+@font-face {
+  font-family: 'Glyphicons Social Regular';
+  src: url('glyphicons/glyphicons-social-regular.eot');
+  src: url('glyphicons/glyphicons-social-regular.eot?#iefix') format('embedded-opentype'), url('glyphicons/glyphicons-social-regular.woff') format('woff'), url('glyphicons/glyphicons-social-regular.ttf') format('truetype'), url('glyphicons/glyphicons-social-regular.svg#glyphicons_socialregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+.social-font {
+  font-family: 'Glyphicons Social Regular';
+  font-style: normal;
+  font-weight: normal;
+  }
+
+/* buttonry colours ========================================================= */
+
+.btn-aslak {
+  background-color: #006da6;
+  border-color: #006da6;
+  color: #ffffff;
+  }
+
+/* override pagination colors with mellanblå ============================ */
+.pagination > li > a,
+.pagination > li > span {
+  color: #006da6;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  color: #006da6;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  color: #ffffff;
+  background-color: #006da6;
+  border-color: #006da6;
+}

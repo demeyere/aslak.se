@@ -1,21 +1,31 @@
-<!DOCTYPE html>
-	<html>
-		<head>
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
-		</head>
-		<body>
-			<nav>
-	    		header
-			</nav><hr>
-			<div class="container">
-			
-			{{ content }}
-			
-			</div><!-- /.container -->
-			<footer>
-	        		<p><a href="https://demeyere.github.io/aslak.se">aslak.se</a></p>
-			</footer>
-		</body>
-	</html>
+{% include header.html %}
+
+<section class="content-area"><div class="container">
+<div class="row"> 
+
+<div class="col-md-12">
+
+
+{% for post in site.posts %}
+
+<article class="{{ post.class }}" >
+{{ post.content }}
+
+<!-- include demeyere_byline.html -->
+
+</article>
+
+{% endfor %}
+
+
+<!-- include demeyere_bootstrap_pagination.html -->
+
+<!-- /.col-md-12 --></div>
+
+<!-- /.row --></div>
+<!-- /.content-area --></div></section>
+
+<?php get_footer(); ?>
+
+- - -
+
