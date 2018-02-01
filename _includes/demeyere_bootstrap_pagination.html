@@ -2,7 +2,7 @@
 <ul class='pagination'>
 <!-- paginator.total_pages = {{ paginator.total_pages }} -->
 
-{% for i in 1..paginator.total_pages %}
+{% for i in (1..paginator.total_pages) %}
 <li><a href='/page{{ i }}'>{{ i }}</a></li>
 {% endfor %}
 
