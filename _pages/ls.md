@@ -13,7 +13,7 @@ layout: single
 {% assign sorted_posts = (site.posts | sort: 'title') %}
 {% for post in sorted_posts %}
 {{ post.url }} // {{ post.title }}<br/>
-{{ post | jsonify }} <br/>
+{{ post | inspect }} <br/>
 {% endfor %}
 
 - - -
