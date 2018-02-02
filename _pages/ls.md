@@ -9,7 +9,8 @@ layout: post
 {{% assign my_number_of_posts = site.posts | size %}}
 {{ my_number_of_posts }}
 
-{{% assign my_number_per_column = my_number_of_posts | divided_by: 3 %}}
+{{% assign my_number_per_column = my_number_of_posts %}}
+{{% assign my_number_per_column = my_number_per_column | divided_by: 3 %}}
 {{% assign my_number_per_column = my_number_per_column | plus: 1 %}}
 {{ my_number_per_column }}
 
