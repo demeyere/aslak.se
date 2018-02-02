@@ -1,6 +1,6 @@
 ---
 layout: post
-title: klassiker
+title: Klassiker
 date: 2018-01-06
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: i eller om
+title: I eller om
 date: 2018-01-15
 ---
 

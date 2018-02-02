@@ -1,6 +1,6 @@
 ---
 layout: post
-title: livet
+title: Livet
 date: 2018-01-21
 ---
 

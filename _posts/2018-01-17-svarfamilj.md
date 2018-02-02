@@ -1,6 +1,6 @@
 ---
 layout: post
-title: svärfamilj
+title: Svärfamilj
 date: 2018-01-17
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: gamla ordbok
+title: Gamla ordbok
 date: 2018-01-16
 ---
 

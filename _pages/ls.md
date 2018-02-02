@@ -6,12 +6,11 @@ permalink: /ls
 layout: single
 ---
 
-`% aslak.se:ls`
-
-<p>
+```
+% aslak.se:ls
 
 {% assign sorted_posts = (site.posts | sort: 'title') %}
-{% for post in sorted_posts %}{{ post.title }} <{{ post.url }}><br/>
+{% for post in sorted_posts %}{{ post.title }}   //   {{ post.url }}
 {% endfor %}
 
-- - -
+```

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: snoskor
+title: Snoskor
 date: 2018-01-18
 ---
 
