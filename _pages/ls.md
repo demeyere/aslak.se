@@ -9,7 +9,6 @@ layout: post
 {{ site.posts | size }}
 {% assign my_posts_count = (site.posts | size) %}{{ my_posts_count }}
 {% assign my_column_size = (my_posts_count | divided_by: 2) %}{{ my_column_size }}
-{{ 100 | divided_by: 2 }}a
 
 {% assign sorted_posts = (site.posts | sort: 'title') %}
 {% for post in sorted_posts %}<a href="{{ post.url }}">{{ post.title }}</a><br/>
