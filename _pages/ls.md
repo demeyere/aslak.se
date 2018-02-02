@@ -6,11 +6,9 @@ permalink: /ls
 layout: single
 ---
 
-```
-% aslak.se:ls
+
+aslak.se:ls
 
 {% assign sorted_posts = (site.posts | sort: 'title') %}
-{% for post in sorted_posts %}{{ post.title }}   //   {{ post.url }}
+{% for post in sorted_posts %}<a href="{{ post.url }}">{{ post.title }}</a><br/>
 {% endfor %}
-
-```
