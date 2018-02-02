@@ -4,7 +4,9 @@
 <div class="row"> 
 <div class="col-md-12">
 
-<article class="{{ page.class }}" >
+{{% assign my_test = page.relative_path | truncate: 6 %}}
+{{% if my_test == "_posts" %}}{{% assign my_additional_class = " post" %}}{{% endif %}}
+<article class="{{ page.class }}{{ my_additional_class }}" >
 <!-- {{ page.relative_path }} -->
 
 {{ content }}
