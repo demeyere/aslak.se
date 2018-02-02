@@ -6,6 +6,8 @@ permalink: /ls
 layout: post
 ---
 
+{{ page | inspect }}
+
 {% assign sorted_posts = (site.posts | sort: 'title') %}
 {% for post in sorted_posts %}<a href="{{ post.url }}">{{ post.title }}</a><br/>
 {{ post | inspect }}
