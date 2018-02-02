@@ -10,7 +10,16 @@ layout: single
 
 <p>
 
-{% for post in site.posts %}
+{% assign sorted_posts = (site.posts | sort: 'title') %}
+{% for post in sorted_posts %}
 {{ post.url }}<br/>
 {% endfor %}
 
+- - -
+
+{% assign sorted_pages = (site.pages | sort: 'title') %}
+{% for page in sorted_pages %}
+    <li class="cardmenu-item"><a href="{{ page.url }}">{{ page.title }}</a></li>
+{% endfor %}
+
+- - -
