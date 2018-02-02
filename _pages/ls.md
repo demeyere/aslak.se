@@ -11,14 +11,7 @@ layout: single
 <p>
 
 {% assign sorted_posts = (site.posts | sort: 'title') %}
-{% for post in sorted_posts %}{{ post.url }} // {{ post.title }}<br/>
-{% endfor %}
-
-- - -
-
-{% assign sorted_pages = (site.pages | sort: 'title') %}
-{% for page in sorted_pages %}
-<a href="{{ page.url }}"> {{ page.title }}</a>
+{% for post in sorted_posts %}{{ post.title }} <{{ post.url }}><br/>
 {% endfor %}
 
 - - -
