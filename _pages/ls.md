@@ -6,7 +6,13 @@ permalink: /ls
 layout: post
 ---
 
-{{ site.posts | size }}
+{{% assign my_number_of_posts = site.posts | size %}}
+{{ my_number_of_posts }}
+
+{{% assign my_number_per_column = my_number_of_posts | divided_by: 3 %}}
+{{% assign my_number_per_column = my_number_per_column | plus: 1 %}}
+{{ my_number_per_column }}
+
 
 {% assign sorted_posts = (site.posts | sort: 'title') %}
 {% for post in sorted_posts %}<a href="{{ post.url }}">{{ post.title }}</a><br/>
