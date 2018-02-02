@@ -9,9 +9,6 @@ layout: post
 <div>
 {{% assign my_number_of_posts = site.posts | size %}}
 <!-- my_number_of_posts -->{{ my_number_of_posts }}
-
-{{% assign my_number_per_column = my_number_of_posts %}}
-{{ my_number_per_column }}
 </div>
 
 {% assign sorted_posts = (site.posts | sort: 'title') %}
