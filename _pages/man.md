@@ -10,3 +10,12 @@ Man
 =================
 
 This is a manual for `aslak.se`
+
+
+Quote posts
+-----------------
+
+Posts that are only quotes should have the class quote added by adding the following to the YAML header
+
+    class: quote
+
